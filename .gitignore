@@ -1,0 +1,8 @@
+.DS_Store
+.settings
+.project
+tmp
+bin
+build
+project.xcworkspace
+xcuserdata
