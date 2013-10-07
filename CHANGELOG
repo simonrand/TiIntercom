@@ -1,3 +1,9 @@
+= 0.2 (2013-10-7)
+
+* Updated to v1.1.4 of the Intercom iOS SDK.
+* Added support for loggingEnabled and requiresDisplayOffset
+* Improved logging support (module respects value set for SDK)
+
 = 0.1 (2013-08-17)
 
-* Initial release, based on v1.1 of the Intercom iOS SDKalled.
+* Initial release, based on v1.1 of the Intercom iOS SDK.

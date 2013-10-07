@@ -14,8 +14,16 @@ Ti.API.info('module is => ' + TiIntercom);
 
 TiIntercom.initialize({
   api_key: '[YOUR API KEY]',
-  app_id: '[YOU APP ID]'
+  app_id: '[YOUR APP ID]',
+  // loggingEnabled: true // OPTIONAL: turn on logging at initialize (you can do this later, see below)
+  // requiresDisplayOffset: true // OPTIONAL: turn on display offset at initialize (you can do this later, see below)
 });
+
+// Enable logging (See http://docs.intercom.io/intercom-ios/Classes/Intercom.html#//api/name/loggingEnabled:)
+// TiIntercom.loggingEnabled()
+
+// Enable display offset (See http://docs.intercom.io/intercom-ios/Classes/Intercom.html#//api/name/requiresDisplayOffset:)
+// TiIntercom.requiresDisplayOffset()
 
 // ############################## begin/end session
 

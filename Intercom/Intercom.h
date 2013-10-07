@@ -146,4 +146,42 @@
  */
 + (void)showNewMessageComposer;
 
+//=========================================================================================================
+/** @name Logging. */
+//=========================================================================================================
+/*!
+ The Intercom iOS SDK has a logging mode that you can use to see if sessions are being created and messages are being delivered.
+ 
+ Enable logging by simply calling
+ 
+        [Intercom loggingEnabled:YES];
+ 
+ in your application delegate under where the api-key and app-id are set. Disable this for release builds should you wish to mute the SDK's output.
+ @param logging A boolean value for enabling or disabling logging throughout the SDK.
+ @note Logging is turned off by default. To see logs, please enable it in your application's delegate.
+ */
+
++ (void)loggingEnabled:(BOOL)logging;
+
+//=========================================================================================================
+/** @name Troubleshooting a statusbar offset. */
+//=========================================================================================================
+/*!
+ Depending on the composition of your rootViewController, sometimes in messages appear to be offset by 20 pixels, the height of the status bar.
+ This is due to Apple's expectation of navigation controllers being used as top level contructs and not beind children of UIViewControllers.
+ 
+ If messages being displayed in your apps appear 20 pixels out of place, call
+ 
+    [Intercom requiresDisplayOffset:YES];
+
+ and the SDK will force messages to draw 20 pixels higher.
+ 
+ By default, this is set to NO.
+ 
+ @param offset A boolean value determining if the offset should be applied. NO by default.
+ @note This bug has only been observed in iOS 6. In iOS 7 the display offset is ignored.
+ 
+ */
++ (void)requiresDisplayOffset:(BOOL)offset;
+
 @end
