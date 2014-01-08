@@ -4,16 +4,16 @@
 
 This module is a lightweight wrapper around the Intercom iOS SDK (https://github.com/intercom/intercom-ios/) providing access to all currently implemented functionality (including 2-way messaging) in Titanium projects.
 
-Compatible with iPhone/iPod Touch and iPad. Requires Titanium SDK version 3.1+.
+Compatible with iPhone/iPod Touch and iPad. Requires Titanium SDK version 3.2+.
 
 The module is licensed under the MIT license.
 
 ## Installing and (optionally) building the TiIntercom Module ##
 
 ### INSTALL ###
-You can either copy the module package (ti.intercom-iphone-0.2.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
+You can either copy the module package (ti.intercom-iphone-0.3.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
 
-     unzip -uo ti.intercom-iphone-0.2.zip -d $HOME/Library/Application\ Support/Titanium/
+     unzip -uo ti.intercom-iphone-0.3.zip -d $HOME/Library/Application\ Support/Titanium/
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, change the above command accordingly**
 
@@ -22,7 +22,7 @@ You can either copy the module package (ti.intercom-iphone-0.2.zip) to `$HOME/Li
 Simply add the following lines to your `tiapp.xml` file:
 
     <modules>
-        <module version="0.2" platform="iphone">ti.intercom</module>
+        <module version="0.3" platform="iphone">ti.intercom</module>
     </modules>
 
 and add this line in your app.js file:
@@ -38,7 +38,7 @@ To use this module, at the very least you will need to provide your Intercom API
         requiresDisplayOffset: true // OPTIONAL: turn on display offset at initialize (you can do this later also, see example/app.js)
     });
 
-The module provides a relative mirror of the public APIs provided by the Intercom iOS SDK (http://docs.intercom.io/intercom-ios/Classes/Intercom.html - **v0.2 of TiIntercom uses the Intercom SDK v1.1.4**), with the addition of one further API:
+The module provides a relative mirror of the public APIs provided by the Intercom iOS SDK (http://docs.intercom.io/intercom-ios/Classes/Intercom.html - **v0.3 of TiIntercom uses the Intercom SDK v1.1.4**), with the addition of one further API:
 
     TiIntercom.sessionIsActive()
 
@@ -52,11 +52,16 @@ First, you must have your XCode and Titanium Mobile SDKs in place, and read the 
 
 The build process can be launched using the build.py script that you find in the module's code root directory.
 
-As a result, the ti.intercom-iphone-0.2.zip file will be generated.
+As a result, the ti.intercom-iphone-0.3.zip file will be generated.
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, you need to change the value of the `TITANIUM SDK` variable in `titanium.xcconfig`**
 
 ## Changelog
+
+0.3 (2014-1-8)
+
+- Updated to v1.1.6 of the Intercom iOS SDK (note showMessageComposer change to showNewMessageComposerWithTitleColor)
+- Now built using Titanium 3.2
 
 0.2 (2013-10-7)
 
@@ -74,7 +79,7 @@ Simon Rand: https://github.com/simonrand ([@simonrand](https://twitter.com/simon
 
 ## License
 
-    Copyright (c) 2013 Simon Rand
+    Copyright (c) 2014 Simon Rand
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

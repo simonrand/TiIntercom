@@ -24,4 +24,4 @@ Simon Rand: https://github.com/simonrand ([@simonrand](https://twitter.com/simon
 
 ## License
 
-MIT License, Copyright (c) 2013 Simon Rand
+MIT License, Copyright (c) 2014 Simon Rand

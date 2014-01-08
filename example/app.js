@@ -97,7 +97,10 @@ var composer = Ti.UI.createButton({
 })
 
 composer.addEventListener('click',function(){
-  TiIntercom.showNewMessageComposer();
+  TiIntercom.showNewMessageComposerWithTitleColor({
+    bar_color: '#ff0000',
+    title_color: 'blue'
+  });
 })
 
 scrollview.add(composer);

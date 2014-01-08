@@ -93,11 +93,11 @@ bool loggingEnabled = NO;
     ENSURE_SINGLE_ARG(args, NSDictionary);
 
     [Intercom setApiKey:[args objectForKey:@"api_key"] forAppId:[args objectForKey:@"app_id"]];
-    
+
     if([args objectForKey:@"loggingEnabled"]) {
         [self loggingEnabled:@""];
     }
-    
+
     if([args objectForKey:@"requiresDisplayOffset"]) {
         [self requiresDisplayOffset:@""];
     }
@@ -142,19 +142,19 @@ bool loggingEnabled = NO;
 -(void)loggingEnabled:(id)args
 {
     ENSURE_UI_THREAD_0_ARGS;
-    
+
     [Intercom loggingEnabled:YES];
     loggingEnabled = YES;
-    
+
     if(loggingEnabled) NSLog(@"[DEBUG] Intercom logging enabled");
 }
 
 -(void)requiresDisplayOffset:(id)args
 {
     ENSURE_UI_THREAD_0_ARGS;
-    
+
     [Intercom requiresDisplayOffset:YES];
-    
+
     if(loggingEnabled) NSLog(@"[DEBUG] Intercom display offset enabled");
 }
 
@@ -172,11 +172,16 @@ bool loggingEnabled = NO;
     if(loggingEnabled) NSLog(@"[DEBUG] Incrementing attribute %@", attribute);
 }
 
--(void)showNewMessageComposer:(id)args
+-(void)showNewMessageComposerWithTitleColor:(id)args
 {
-    ENSURE_UI_THREAD_0_ARGS;
+    ENSURE_UI_THREAD(showNewMessageComposerWithTitleColor, args);
+    ENSURE_SINGLE_ARG(args, NSDictionary);
 
-    [Intercom showNewMessageComposer];
+    [Intercom showNewMessageComposerWithTitleColor:[[TiUtils colorValue:[args objectForKey:@"title_color"]] _color] barColor:[[TiUtils colorValue:[args objectForKey:@"bar_color"]] _color] keyboardAppearance:[args objectForKey:@"keyboard_appearance"] success:^(id responseObject) {
+        [Intercom closeNewMessageComposer];
+    } failure:^(NSError *error) {
+        NSLog(@"Failure is %@", error.localizedDescription);
+    }];
 
     if(loggingEnabled) NSLog(@"[DEBUG] Opening composer");
 }

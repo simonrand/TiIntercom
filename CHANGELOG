@@ -1,3 +1,8 @@
+= 0.3 (2014-1-8)
+
+* Updated to v1.1.6 of the Intercom iOS SDK (note showMessageComposer change to showNewMessageComposerWithTitleColor)
+* Now built using Titanium 3.2
+
 = 0.2 (2013-10-7)
 
 * Updated to v1.1.4 of the Intercom iOS SDK.
